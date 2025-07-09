@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-
-
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
+// Axios is a JavaScript library used for making HTTP requests from web browsers and Node.js. Install using npm.
 import axios from 'axios'
 import Pagination from './Pagination';
 
@@ -25,6 +24,7 @@ function Movies({handleAddToWatchlist, handleRemoveToWatchlist, watchList}) {
     setPagaNo(pageNo + 1)
   }
 
+  // Dependancy array used for useEffect => 1) component mounting 2) when ever particular changes happen like page no. changing i.e,[pageNo] is dependancy array.
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=f963888389240549a62a7e7085d5d40d&language=en-US&page=${pageNo}`)
       .then((res) => {

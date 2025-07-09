@@ -5,6 +5,7 @@ import WatchList from './WatchList'
 
 function MovieCard({movieObj, poster_path, name, handleAddToWatchlist, handleRemoveToWatchlist, watchList,}) {
 
+  // Emoji button validation function to check whether movie exists inside the watchlist or not.
   function doesContain(movieObj){
     for(let i=0; i < watchList.length; i++){
       if(watchList[i].id === movieObj.id){
@@ -17,8 +18,9 @@ function MovieCard({movieObj, poster_path, name, handleAddToWatchlist, handleRem
   return (
     <div className='h-[40vh] w-[180px] bg-center bg-cover rounded-xl hover:cursor-pointer hover:scale-110 duration-300 flex flex-col justify-between items-end' style={{backgroundImage: `url(http://image.tmdb.org/t/p/original/${poster_path})`}}>
 
+      {/* Adding Emoji button to add or remove movie from Watchlist with validation function that add toggle effect to this button => if selected - x  or  not - Emoji */}
       {doesContain(movieObj) ? 
-        <div onClick={() => {handleRemoveToWatchlist(movieObj);}} className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-blue-900/60'>&#10060;;</div>
+        <div onClick={() => {handleRemoveToWatchlist(movieObj)}} className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-blue-900/60'>&#10060;</div>
        : 
       <div onClick={() => {handleAddToWatchlist(movieObj)}} className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-blue-900/60'>&#128525;</div>
       }
