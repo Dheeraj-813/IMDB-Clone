@@ -105,6 +105,7 @@ function WatchList({watchList, setWatchList, handleRemoveToWatchlist}) {
             </td>
             <td>{movieObj.vote_average}</td>
             <td>{movieObj.popularity}</td>
+            {/* Here, we want genreids for particular movieObj but it will return array of it so we want only 0th position id. */}
             <td>{genreids[movieObj.genre_ids[0]]}</td>
             {/* Delete button work */}
             <td onClick={() => handleRemoveToWatchlist(movieObj)} className='text-red-800'>Delete</td>
