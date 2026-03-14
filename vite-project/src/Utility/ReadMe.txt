@@ -574,7 +574,7 @@ If its true simply return else if not matched, then match only first genre_ids w
 Based on this filter, we apply next filter() and map() method to show data.
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-(14) Delete button worK :- Delete movie from watchlist:- 
+(14) Delete button work :- Delete movie from watchlist:- 
 
 Here, we are using our previous defined function called "handleRemoveToWatchlist".
 For that we need to pass the function as props from App.jsx to WatchList.jsx like this:- 
