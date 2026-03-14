@@ -231,7 +231,7 @@ In MovieCard.jsx:-
 <div className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-blue-900/60'>&#128525;</div>
 ------------------------------------------------------------------------------------------------------------------------------------
 
-Adding movie to WatchList:-
+(7) Adding movie to WatchList:-
 To add movie in WatchList, First maintain the state:- In App.jsx:-
 let[watchList, setWatchList] = useState([])
 
@@ -265,7 +265,7 @@ The above passing the props process is called "props drillings."(Passing props f
 -------------------------------------------------------------------------------------------------------
 
 
-Remove Movie from WatchList.......
+(8) Remove Movie from WatchList.......
 
 For this first create function to remove movie from WatchList:-
   let handleRemoveToWatchlist = (movieObj) => {
@@ -342,6 +342,8 @@ Here, using doesContain(), if it return true, that means movie exists, then Emoj
 or els if it return false, that means movie does not exists, then show Emoji button as it is.
 -----------------------------------------------------------------------------------------------------------------------------------
 
+(9) To Display Watchlist..........
+
 To populate the Watchlist, based on movies that we add, using above handleAddToWatchlist(),
 and store the value inside the "watchList" of useState().
 So now we have to pass this "watchList" as props to WatchList.jsx component to access it like this:-
@@ -372,7 +374,7 @@ Now to show this watchList data inside the table we have created inside WatchLis
 Here, we can add Image:- poster_path:- {movieObj.poster_path},
 name = {movieObj.original_title}, rating:- {movie.vote_average}, popularity:- {movieObj.popularity} etc.
 
-Saving Watchlist data on localStorage.........
+(10) Saving Watchlist data on localStorage.........
 
 When we refresh the webpage, all movies data are vanished and watchlist gets empty.
 So we need to save this data, for that we can use browser localStorage:- browser -> (right-click)webpage -> application tab -> storage -> localStorage.
@@ -401,7 +403,7 @@ Here, useEffect will run first time because of [] - (Dependancy array), when we 
 if there is no data return or else setWatchList with JSON converted data as 'moviesFromLocalStorage'.
 ---------------------------------------------------------------------------------------------------
 
-Search movie in WatchList:-(using Search input field):-
+(11) Search movie in WatchList:-(using Search input field):-
 
 First maintain state for search input field:-
 const [search, setSearch] = useState('') -> initial value of useState will be empty string.
@@ -438,7 +440,7 @@ Here, based on movieObj, we select movieObj.title -> convert them into lowercase
 then return using includes() only those title that having same letter in search.toLocaleLowerCase() variable/method.
 -----------------------------------------------------------------------------------------------------
 
-Sorting movies based on Ratings...........
+(12) Sorting movies based on Ratings...........
 
 First we design the rating heading in the table. We are adding two arrows:- UP arrow (↑) and Down Arrow (↓) like this:-
 here we using FontAwesome kit:-
@@ -481,7 +483,7 @@ Now pass this function to UP arrow (↑) and Down Arrow (↓) like this:-
 <div onClick={sortIncreasingOrder}> and <div onClick={sortDecreasingOrder}>
 -----------------------------------------------------------------------------------------------------------------
 
-Genre Based watchList movies........
+(13) Genre Based watchList movies........
 
 First create the "Genre.js" file for genre id object :- vite-project -> src -> Utility -> Genre.js. and export it.
 Import it inside the WatchList.jsx :- In WatchList.jsx:- import genreids from '../Utility/Genre'.
@@ -572,7 +574,7 @@ If its true simply return else if not matched, then match only first genre_ids w
 Based on this filter, we apply next filter() and map() method to show data.
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Delete button worK :- Delete movie from watchlist:- 
+(14) Delete button worK :- Delete movie from watchlist:- 
 
 Here, we are using our previous defined function called "handleRemoveToWatchlist".
 For that we need to pass the function as props from App.jsx to WatchList.jsx like this:- 
